@@ -6,4 +6,9 @@
 //  Copyright © 2020 Rohini. All rights reserved.
 //
 
-import Foundation
+import CoreData
+
+class CoreDataModel: NSManagedObject {
+    
+    @NSManaged var name: String
+}

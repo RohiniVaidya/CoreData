@@ -8,75 +8,136 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+import CloudKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    
+    lazy var coreDataStack: CoreDataStack = { return CoreDataStack() }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //        application.registerForRemoteNotifications()
+        //
+        //
+        //        UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
+        //            if granted{
+        //            }
+        //        })
+        //        UNUserNotificationCenter.current().delegate = self
+        //self.addRemoteNotificationSubscription()
+        
+        if let options: NSDictionary = launchOptions as NSDictionary? {
+            let remoteNotification =
+                options[UIApplication.LaunchOptionsKey.remoteNotification]
+            if let notification = remoteNotification {
+                
+                self.application(application, didReceiveRemoteNotification:
+                    notification as! [AnyHashable : Any],
+                                 fetchCompletionHandler:  { (result) in
+                                    print("received remote notification \(result)")
+                })
+                
+            }
+        }
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
-
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentCloudKitContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentCloudKitContainer(name: "COreDataExample")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let notification: CKNotification = CKNotification(fromRemoteNotificationDictionary: userInfo as! [String:Any])!
+        
+        if notification.notificationType == CKNotification.NotificationType.query{
+            
+            let queryNotification = notification as! CKQueryNotification
+            
+            let recordID = queryNotification.recordID
+            
+            let container = CKContainer(identifier: "iCloud.com.rohini.COreDataExample")
+            
+            let database = container.privateCloudDatabase
+            database.fetch(withRecordID: recordID!) { (record, error) in
+                guard let record = record else { return }
+                
+                let managedObjContext = self.coreDataStack.persistentContainer.viewContext
+                let fetchReq = NSFetchRequest<Person>(entityName: "Person")
+                let predicate = NSPredicate(format: "name = %@", argumentArray: [record.value(forKey: "CD_name") as! String]) // Specify your condition here
+                fetchReq.predicate = predicate
+                do{
+                    let data = try managedObjContext.fetch(fetchReq)
+                    print("DEBUG: value for the name is \(data)")
+                }
+                catch{
+                    
+                }
             }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+            
+            
         }
     }
-
+    
+    
+    //MARK: -  Subscribing to remote notification
+    func addRemoteNotificationSubscription(){
+        let container = CKContainer(identifier: "iCloud.com.rohini.COreDataExample")
+        
+        let database = container.privateCloudDatabase
+        
+        database.fetchAllSubscriptions { (subscriptions, error)  in
+            guard error == nil else {
+                print("ERROR: error in subscribing to remote notifications \(String(describing: error?.localizedDescription))")
+                
+                return
+                
+            }
+            guard let subscriptions = subscriptions else { return }
+            for subscription in subscriptions {
+                
+                database.delete(withSubscriptionID: subscription.subscriptionID) { (success, error) in
+                    if error != nil{
+                        print("ERROR: error in subscribing to remote notifications \(String(describing: error?.localizedDescription))")
+                    }
+                }
+                
+            }
+            
+            let predicate = NSPredicate(value: true)
+            //Add the record type
+            let subscription = CKQuerySubscription(recordType: "CD_Person", predicate: predicate, options: .firesOnRecordCreation)
+            let notification = CKSubscription.NotificationInfo()
+            notification.alertBody = "Remote notification"
+            notification.soundName = "default"
+            
+            subscription.notificationInfo = notification
+            database.save(subscription) { (subscription, error) in
+                guard error == nil else {
+                    print("ERROR: error in saving the subdcription \(String(describing: error?.localizedDescription))")
+                    return
+                }
+                
+                print("DEBUG: successully subscribed to remote notification \(subscription.debugDescription)")
+            }
+            
+            
+        }
+        
+        
+    }
+    
 }
 

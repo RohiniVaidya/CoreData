@@ -14,7 +14,63 @@
 		1820AE38246150180013D59C /* COreDataExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1820AE36246150180013D59C /* COreDataExample.xcdatamodeld */; };
 		1820AE3A2461501A0013D59C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1820AE392461501A0013D59C /* Assets.xcassets */; };
 		1820AE3D2461501A0013D59C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1820AE3B2461501A0013D59C /* LaunchScreen.storyboard */; };
+		1820AE472461592D0013D59C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1820AE462461592D0013D59C /* CloudKit.framework */; };
+		18445EE82463EDC900F8AD63 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18445EE62463EDC900F8AD63 /* Interface.storyboard */; };
+		18445EEA2463EDCE00F8AD63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18445EE92463EDCE00F8AD63 /* Assets.xcassets */; };
+		18445EF12463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18445EF02463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18445EF62463EDCE00F8AD63 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445EF52463EDCE00F8AD63 /* InterfaceController.swift */; };
+		18445EF82463EDCE00F8AD63 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445EF72463EDCE00F8AD63 /* ExtensionDelegate.swift */; };
+		18445EFA2463EDCE00F8AD63 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445EF92463EDCE00F8AD63 /* NotificationController.swift */; };
+		18445EFC2463EDD000F8AD63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18445EFB2463EDD000F8AD63 /* Assets.xcassets */; };
+		18445F012463EDD000F8AD63 /* CoreDataExampleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 18445EE42463EDC900F8AD63 /* CoreDataExampleWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18445F0C2463EF7D00F8AD63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18445F0B2463EF7D00F8AD63 /* CloudKit.framework */; };
+		18445F0E2463EFFA00F8AD63 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445F0D2463EFFA00F8AD63 /* CoreDataStack.swift */; };
+		18445F0F2463F19600F8AD63 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445F0D2463EFFA00F8AD63 /* CoreDataStack.swift */; };
+		18445F112463FA0A00F8AD63 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18445F102463FA0A00F8AD63 /* CoreDataModel.swift */; };
+		18445F122463FB6400F8AD63 /* COreDataExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1820AE36246150180013D59C /* COreDataExample.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18445EF22463EDCE00F8AD63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1820AE22246150170013D59C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18445EEF2463EDCE00F8AD63;
+			remoteInfo = "CoreDataExampleWatch Extension";
+		};
+		18445EFF2463EDD000F8AD63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1820AE22246150170013D59C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18445EE32463EDC900F8AD63;
+			remoteInfo = CoreDataExampleWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18445F022463EDD000F8AD63 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				18445F012463EDD000F8AD63 /* CoreDataExampleWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18445F052463EDD000F8AD63 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18445EF12463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1820AE2A246150170013D59C /* COreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +82,23 @@
 		1820AE392461501A0013D59C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1820AE3C2461501A0013D59C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1820AE3E2461501A0013D59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1820AE44246158F10013D59C /* COreDataExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = COreDataExample.entitlements; sourceTree = "<group>"; };
+		1820AE462461592D0013D59C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		18445EE42463EDC900F8AD63 /* CoreDataExampleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataExampleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18445EE72463EDC900F8AD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		18445EE92463EDCE00F8AD63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18445EEB2463EDCE00F8AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18445EF02463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CoreDataExampleWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18445EF52463EDCE00F8AD63 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		18445EF72463EDCE00F8AD63 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		18445EF92463EDCE00F8AD63 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		18445EFB2463EDD000F8AD63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18445EFD2463EDD000F8AD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18445EFE2463EDD000F8AD63 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		18445F0A2463EF7400F8AD63 /* CoreDataExampleWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CoreDataExampleWatch Extension.entitlements"; sourceTree = "<group>"; };
+		18445F0B2463EF7D00F8AD63 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		18445F0D2463EFFA00F8AD63 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		18445F102463FA0A00F8AD63 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +106,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1820AE472461592D0013D59C /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18445EED2463EDCE00F8AD63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18445F0C2463EF7D00F8AD63 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				1820AE2C246150170013D59C /* COreDataExample */,
+				18445EE52463EDC900F8AD63 /* CoreDataExampleWatch */,
+				18445EF42463EDCE00F8AD63 /* CoreDataExampleWatch Extension */,
 				1820AE2B246150170013D59C /* Products */,
+				1820AE452461592D0013D59C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				1820AE2A246150170013D59C /* COreDataExample.app */,
+				18445EE42463EDC900F8AD63 /* CoreDataExampleWatch.app */,
+				18445EF02463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +145,7 @@
 		1820AE2C246150170013D59C /* COreDataExample */ = {
 			isa = PBXGroup;
 			children = (
+				1820AE44246158F10013D59C /* COreDataExample.entitlements */,
 				1820AE2D246150170013D59C /* AppDelegate.swift */,
 				1820AE2F246150170013D59C /* SceneDelegate.swift */,
 				1820AE31246150170013D59C /* ViewController.swift */,
@@ -66,8 +154,43 @@
 				1820AE3B2461501A0013D59C /* LaunchScreen.storyboard */,
 				1820AE3E2461501A0013D59C /* Info.plist */,
 				1820AE36246150180013D59C /* COreDataExample.xcdatamodeld */,
+				18445F0D2463EFFA00F8AD63 /* CoreDataStack.swift */,
 			);
 			path = COreDataExample;
+			sourceTree = "<group>";
+		};
+		1820AE452461592D0013D59C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18445F0B2463EF7D00F8AD63 /* CloudKit.framework */,
+				1820AE462461592D0013D59C /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18445EE52463EDC900F8AD63 /* CoreDataExampleWatch */ = {
+			isa = PBXGroup;
+			children = (
+				18445EE62463EDC900F8AD63 /* Interface.storyboard */,
+				18445EE92463EDCE00F8AD63 /* Assets.xcassets */,
+				18445EEB2463EDCE00F8AD63 /* Info.plist */,
+			);
+			path = CoreDataExampleWatch;
+			sourceTree = "<group>";
+		};
+		18445EF42463EDCE00F8AD63 /* CoreDataExampleWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				18445F0A2463EF7400F8AD63 /* CoreDataExampleWatch Extension.entitlements */,
+				18445EF52463EDCE00F8AD63 /* InterfaceController.swift */,
+				18445EF72463EDCE00F8AD63 /* ExtensionDelegate.swift */,
+				18445EF92463EDCE00F8AD63 /* NotificationController.swift */,
+				18445EFB2463EDD000F8AD63 /* Assets.xcassets */,
+				18445EFD2463EDD000F8AD63 /* Info.plist */,
+				18445EFE2463EDD000F8AD63 /* PushNotificationPayload.apns */,
+				18445F102463FA0A00F8AD63 /* CoreDataModel.swift */,
+			);
+			path = "CoreDataExampleWatch Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,15 +203,51 @@
 				1820AE26246150170013D59C /* Sources */,
 				1820AE27246150170013D59C /* Frameworks */,
 				1820AE28246150170013D59C /* Resources */,
+				18445F022463EDD000F8AD63 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				18445F002463EDD000F8AD63 /* PBXTargetDependency */,
 			);
 			name = COreDataExample;
 			productName = COreDataExample;
 			productReference = 1820AE2A246150170013D59C /* COreDataExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		18445EE32463EDC900F8AD63 /* CoreDataExampleWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18445F092463EDD000F8AD63 /* Build configuration list for PBXNativeTarget "CoreDataExampleWatch" */;
+			buildPhases = (
+				18445EE22463EDC900F8AD63 /* Resources */,
+				18445F052463EDD000F8AD63 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18445EF32463EDCE00F8AD63 /* PBXTargetDependency */,
+			);
+			name = CoreDataExampleWatch;
+			productName = CoreDataExampleWatch;
+			productReference = 18445EE42463EDC900F8AD63 /* CoreDataExampleWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		18445EEF2463EDCE00F8AD63 /* CoreDataExampleWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18445F082463EDD000F8AD63 /* Build configuration list for PBXNativeTarget "CoreDataExampleWatch Extension" */;
+			buildPhases = (
+				18445EEC2463EDCE00F8AD63 /* Sources */,
+				18445EED2463EDCE00F8AD63 /* Frameworks */,
+				18445EEE2463EDCE00F8AD63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreDataExampleWatch Extension";
+			productName = "CoreDataExampleWatch Extension";
+			productReference = 18445EF02463EDCE00F8AD63 /* CoreDataExampleWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +260,12 @@
 				ORGANIZATIONNAME = Rohini;
 				TargetAttributes = {
 					1820AE29246150170013D59C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					18445EE32463EDC900F8AD63 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					18445EEF2463EDCE00F8AD63 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -119,6 +284,8 @@
 			projectRoot = "";
 			targets = (
 				1820AE29246150170013D59C /* COreDataExample */,
+				18445EE32463EDC900F8AD63 /* CoreDataExampleWatch */,
+				18445EEF2463EDCE00F8AD63 /* CoreDataExampleWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -134,6 +301,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18445EE22463EDC900F8AD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18445EEA2463EDCE00F8AD63 /* Assets.xcassets in Resources */,
+				18445EE82463EDC900F8AD63 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18445EEE2463EDCE00F8AD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18445EFC2463EDD000F8AD63 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18445F0E2463EFFA00F8AD63 /* CoreDataStack.swift in Sources */,
 				1820AE32246150170013D59C /* ViewController.swift in Sources */,
 				1820AE2E246150170013D59C /* AppDelegate.swift in Sources */,
 				1820AE30246150170013D59C /* SceneDelegate.swift in Sources */,
@@ -148,7 +333,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18445EEC2463EDCE00F8AD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18445EFA2463EDCE00F8AD63 /* NotificationController.swift in Sources */,
+				18445F122463FB6400F8AD63 /* COreDataExample.xcdatamodeld in Sources */,
+				18445EF82463EDCE00F8AD63 /* ExtensionDelegate.swift in Sources */,
+				18445EF62463EDCE00F8AD63 /* InterfaceController.swift in Sources */,
+				18445F112463FA0A00F8AD63 /* CoreDataModel.swift in Sources */,
+				18445F0F2463F19600F8AD63 /* CoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18445EF32463EDCE00F8AD63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18445EEF2463EDCE00F8AD63 /* CoreDataExampleWatch Extension */;
+			targetProxy = 18445EF22463EDCE00F8AD63 /* PBXContainerItemProxy */;
+		};
+		18445F002463EDD000F8AD63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18445EE32463EDC900F8AD63 /* CoreDataExampleWatch */;
+			targetProxy = 18445EFF2463EDD000F8AD63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1820AE33246150170013D59C /* Main.storyboard */ = {
@@ -165,6 +376,14 @@
 				1820AE3C2461501A0013D59C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18445EE62463EDC900F8AD63 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18445EE72463EDC900F8AD63 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -288,14 +507,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = COreDataExample/COreDataExample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
 				INFOPLIST_FILE = COreDataExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,16 +529,107 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = COreDataExample/COreDataExample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
 				INFOPLIST_FILE = COreDataExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18445F032463EDD000F8AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
+				IBSC_MODULE = CoreDataExampleWatch_Extension;
+				INFOPLIST_FILE = CoreDataExampleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		18445F042463EDD000F8AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
+				IBSC_MODULE = CoreDataExampleWatch_Extension;
+				INFOPLIST_FILE = CoreDataExampleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		18445F062463EDD000F8AD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "CoreDataExampleWatch Extension/CoreDataExampleWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
+				INFOPLIST_FILE = "CoreDataExampleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		18445F072463EDD000F8AD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "CoreDataExampleWatch Extension/CoreDataExampleWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2TWTY7FP9;
+				INFOPLIST_FILE = "CoreDataExampleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohini.COreDataExample.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -335,6 +650,24 @@
 			buildConfigurations = (
 				1820AE422461501A0013D59C /* Debug */,
 				1820AE432461501A0013D59C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18445F082463EDD000F8AD63 /* Build configuration list for PBXNativeTarget "CoreDataExampleWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18445F062463EDD000F8AD63 /* Debug */,
+				18445F072463EDD000F8AD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18445F092463EDD000F8AD63 /* Build configuration list for PBXNativeTarget "CoreDataExampleWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18445F032463EDD000F8AD63 /* Debug */,
+				18445F042463EDD000F8AD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

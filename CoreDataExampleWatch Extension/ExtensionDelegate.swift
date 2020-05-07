@@ -9,6 +9,7 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    lazy var coreDataStack: CoreDataStack = { return CoreDataStack() }()
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
